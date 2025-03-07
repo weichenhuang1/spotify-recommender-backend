@@ -33,7 +33,7 @@ SCOPES = "user-read-recently-played"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow requests from React frontend
+    allow_origins=["https://weichenhuang1.github.io"],  # Allow requests from React frontend
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers
@@ -78,31 +78,6 @@ def refresh_access_token():
 
 TOKEN_STORAGE = {} #for now
 
-# @app.get("/callback")
-# def callback(request: Request):
-#     """Handles Spotify OAuth callback and exchanges authorization code for access token."""
-#     code = request.query_params.get("code")
-#     if not code:
-#         return JSONResponse({"error": "Authorization failed"}, status_code=400)
-
-#     token_data = {
-#         "grant_type": "authorization_code",
-#         "code": code,
-#         "redirect_uri": SPOTIFY_REDIRECT_URI,
-#         "client_id": SPOTIFY_CLIENT_ID,
-#         "client_secret": SPOTIFY_CLIENT_SECRET
-#     }
-
-#     response = requests.post(SPOTIFY_TOKEN_URL, data=token_data)
-#     token_json = response.json()
-
-#     # Store tokens in memory (Replace this with a database for persistence)
-#     TOKEN_STORAGE["access_token"] = token_json.get("access_token")
-#     TOKEN_STORAGE["refresh_token"] = token_json.get("refresh_token")
-#     TOKEN_STORAGE["expires_in"] = token_json.get("expires_in")  # 3600 seconds (1 hour)
-
-#     redirect_url = f"http://localhost:8000/recommendations"
-#     return RedirectResponse(url=redirect_url)
 
 @app.get("/callback")
 def callback(request: Request):
@@ -125,7 +100,7 @@ def callback(request: Request):
     TOKEN_STORAGE["access_token"] = token_json.get("access_token")
     TOKEN_STORAGE["refresh_token"] = token_json.get("refresh_token")
 
-    return RedirectResponse(url="http://localhost:3000/recommendations")
+    return RedirectResponse(url="https://weichenhuang1.github.io/spotify-recommender/recommendations")
 
 
 
