@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+fastapi
+python-dotenv
+uvicorn
+requests
+git-lfs
+dotenv
