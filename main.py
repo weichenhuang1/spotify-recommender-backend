@@ -215,8 +215,3 @@ def get_recommendations():
             })
 
     return JSONResponse({ "recommendations" : recommendations})    
-
-
-if __name__ == "__main__":
-    import uvicorn # type: ignore
-    uvicorn.run("main:app", host="localhost", port=8000, reload=True)
