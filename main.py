@@ -1,9 +1,7 @@
 import os
 import requests # type: ignore
 import urllib.parse
-import json
 import pandas as pd # type: ignore
-import numpy as np # type: ignore
 from sklearn.decomposition import PCA # type: ignore
 from sklearn.preprocessing import StandardScaler # type: ignore
 from sklearn.neighbors import KDTree # type: ignore
@@ -11,11 +9,9 @@ from fastapi import FastAPI, Request, Depends # type: ignore
 from fastapi.responses import JSONResponse, RedirectResponse # type: ignore
 from dotenv import load_dotenv # type: ignore
 from k_means import k_means_optimal
-from fastapi.responses import HTMLResponse  # type: ignore
 from fastapi.middleware.cors import CORSMiddleware # type: ignore
 import plotly.express as px # type: ignore
 import plotly.graph_objects as go # type: ignore
-from functools import lru_cache
 from fastapi.middleware.cors import CORSMiddleware # type: ignore
 import plotly.colors as pc #type: ignore
 import time
@@ -37,7 +33,7 @@ CACHE_EXPIRY = 3600
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allows React frontend to connect
+    allow_origins=["https://spotify-recommender-frontend-pink.vercel.app"],  # Allows React frontend to connect
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -205,7 +201,7 @@ def callback(request: Request):
     TOKEN_STORAGE["access_token"] = token_json.get("access_token")
     TOKEN_STORAGE["refresh_token"] = token_json.get("refresh_token")
 
-    return RedirectResponse(url="http://localhost:3000/recommendations")
+    return RedirectResponse(url="https://spotify-recommender-frontend-pink.vercel.app/recommendations")
 
 
 
