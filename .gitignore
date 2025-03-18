@@ -1,0 +1,9 @@
+node_modules/
+build/
+venv/
+.env
+__pycache__/
+spotify-front-end/
+todo.txt
+spotify_data.csv
+scratch.py
