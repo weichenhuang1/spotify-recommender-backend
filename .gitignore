@@ -5,5 +5,4 @@ venv/
 __pycache__/
 spotify-front-end/
 todo.txt
-spotify_data.csv
 scratch.py
