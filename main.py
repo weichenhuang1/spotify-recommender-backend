@@ -41,7 +41,7 @@ app.add_middleware(
 
 def load_total_songs():
     total_songs_df = pd.read_csv("spotify_data.csv")
-    print(total_songs_df)
+    print(f"total_songs_df: {total_songs_df}")
     total_songs_df = pd.read_csv("spotify_data.csv", usecols=[
         "artist_name", "track_name", "track_id", "popularity",
         "danceability", "energy", "loudness", "speechiness",
