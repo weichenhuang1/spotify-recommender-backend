@@ -40,6 +40,8 @@ app.add_middleware(
 )
 
 def load_total_songs():
+    print("📂 Current Directory:", os.getcwd())
+    print("📄 Files:", os.listdir())
     total_songs_df = pd.read_csv("spotify_data.csv", usecols=[
         "artist_name", "track_name", "track_id", "popularity",
         "danceability", "energy", "loudness", "speechiness",
