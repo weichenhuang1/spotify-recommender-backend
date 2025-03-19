@@ -1,8 +1,5 @@
-numpy
-pandas
 plotly
 requests
 requests-oauthlib
 requests-toolbelt
 scikit-learn
-sklearn-crfsuite
