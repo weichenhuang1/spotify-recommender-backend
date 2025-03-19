@@ -1,5 +1,6 @@
 pandas
 numpy
+fastapi
 plotly
 requests
 requests-oauthlib
