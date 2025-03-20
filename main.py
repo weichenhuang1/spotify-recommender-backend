@@ -365,5 +365,7 @@ def plot_clusters():
     return JSONResponse(content=fig.to_json())  # Convert to JSON and return
     
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=8000))
+    import uvicorn
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
