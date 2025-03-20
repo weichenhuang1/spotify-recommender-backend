@@ -1,6 +1,0 @@
-{
-    "scripts": {
-      "postinstall": "git lfs pull",
-      "build": "python3 main.py"
-    }
-  }
