@@ -363,4 +363,7 @@ def plot_clusters():
 
     # Show figure
     return JSONResponse(content=fig.to_json())  # Convert to JSON and return
+    
+if __name__ == '__main__':
+    app.run(debug=True, port=os.getenv("PORT", default=8000))
 
